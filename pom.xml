@@ -15,9 +15,9 @@
     <name>dataease</name>
 
     <modules>
-        <module>sdk</module>
-        <module>core</module>
-        <module>extensions</module>
+        <module>dataease-extension-sdk</module>
+        <module>dataease-server</module>
+        <module>dataease-extensions</module>
     </modules>
 
     <parent>
