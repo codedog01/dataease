@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.Map;
@@ -94,4 +95,6 @@ public interface AuthApi {
     @GetMapping("/getPublicKey")
     String getPublicKey();
 
+    @GetMapping("/ssoLogin")
+    String ssoLogin(@RequestParam("userId") Long userId, @RequestParam("username")String username, @RequestParam("password")String password);
 }

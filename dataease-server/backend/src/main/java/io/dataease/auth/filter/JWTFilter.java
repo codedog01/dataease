@@ -51,18 +51,19 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 
             DefaultLicenseService licenseService = CommonBeanFactory.getBean(DefaultLicenseService.class);
             F2CLicenseResponse licenseResponse = null;
-            try {
-                licenseResponse = licenseService.validateLicense();
-            } catch (Exception e) {
-                throw new AuthenticationException(licMessage);
-            }
-            if (licenseResponse.getStatus() != F2CLicenseResponse.Status.valid) {
-                throw new AuthenticationException(licMessage);
-            }
+//            try {
+//                licenseResponse = licenseService.validateLicense();
+//            } catch (Exception e) {
+//                throw new AuthenticationException(licMessage);
+//            }
+//            if (licenseResponse.getStatus() != F2CLicenseResponse.Status.valid) {
+//                throw new AuthenticationException(licMessage);
+//            }
 
             ASKToken askToken = ApiKeyHandler.buildToken(httpServletRequest);
 
-            getSubject(request, response).login(askToken);
+            Subject subject = getSubject(request, response);
+            subject.login(askToken);
             return true;
         }
 

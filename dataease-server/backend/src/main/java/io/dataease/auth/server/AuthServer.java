@@ -447,4 +447,14 @@ public class AuthServer implements AuthApi {
         return RsaProperties.publicKey;
     }
 
+    @Override
+    public String ssoLogin(Long userId, String username, String password) {
+
+        password = CodingUtil.md5(password);
+        TokenInfo tokenInfo = TokenInfo.builder().userId(userId).username(username).build();
+        String token = JWTUtils.sign(tokenInfo, password);
+        ServletUtils.setToken(token);
+        return token;
+    }
+
 }

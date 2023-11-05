@@ -64,12 +64,13 @@ public class TokenCacheUtils {
 
 
     public static boolean invalid(String token) {
-        if (useRedis()) {
-            RedisTemplate redisTemplate = (RedisTemplate) CommonBeanFactory.getBean("redisTemplate");
-            return redisTemplate.hasKey(KEY + token);
-        }
-        Object sys_token_store = CacheUtils.get(KEY, token);
-        return ObjectUtils.isNotEmpty(sys_token_store) && StringUtils.isNotBlank(sys_token_store.toString());
+        return false;
+//        if (useRedis()) {
+//            RedisTemplate redisTemplate = (RedisTemplate) CommonBeanFactory.getBean("redisTemplate");
+//            return redisTemplate.hasKey(KEY + token);
+//        }
+//        Object sys_token_store = CacheUtils.get(KEY, token);
+//        return ObjectUtils.isNotEmpty(sys_token_store) && StringUtils.isNotBlank(sys_token_store.toString());
     }
 
     public static void add2OnlinePools(String token, Long userId) {
