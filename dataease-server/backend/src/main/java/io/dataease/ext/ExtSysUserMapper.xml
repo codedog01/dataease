@@ -48,6 +48,13 @@
             or
             email like concat('%', #{keyword} , '%')
         </if>
+        <if test="username != null and username != '' ">
+            where
+            username =#{username}
+        </if>
+
+
+
         ) u
         LEFT JOIN sys_dept d ON d.dept_id = u.dept_id
         LEFT JOIN sys_users_roles sur ON sur.user_id = u.user_id

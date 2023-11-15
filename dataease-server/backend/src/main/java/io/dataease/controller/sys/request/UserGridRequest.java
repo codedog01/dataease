@@ -8,7 +8,8 @@ import java.util.List;
 
 @Data
 public class UserGridRequest extends KeywordRequest {
-
+    @ApiModelProperty("用户名（唯一标识）")
+    private String username;
     @ApiModelProperty("角色ID列表")
     private List<Long> roleIdList;
     @ApiModelProperty("组织ID列表")

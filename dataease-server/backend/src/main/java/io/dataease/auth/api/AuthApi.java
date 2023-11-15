@@ -95,6 +95,4 @@ public interface AuthApi {
     @GetMapping("/getPublicKey")
     String getPublicKey();
 
-    @GetMapping("/ssoLogin")
-    String ssoLogin(@RequestParam("userId") Long userId, @RequestParam("username")String username, @RequestParam("password")String password);
 }
