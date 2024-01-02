@@ -14,24 +14,28 @@
             ref="panelList"
           />
         </el-tab-pane>
-        <el-tab-pane
-          name="panels_star"
-          :lazy="true"
-        >
-          <span slot="label"><i class="el-icon-star-off tablepanel-i"/>{{ $t('panel.store') }}</span>
-          <enshrine v-if="activeName==='panels_star'"/>
-        </el-tab-pane>
-        <el-tab-pane
-          name="panels_share"
-          :lazy="true"
-        >
-          <span slot="label"><i class="el-icon-share tablepanel-i"/>{{ $t('panel.share') }}</span>
-          <share-tree
-            v-if="showShare"
-            ref="share_tree"
-            :msg-panel-ids="msgPanelIds"
-          />
-        </el-tab-pane>
+
+
+
+
+        <!--        <el-tab-pane-->
+<!--          name="panels_star"-->
+<!--          :lazy="true"-->
+<!--        >-->
+<!--          <span slot="label"><i class="el-icon-star-off tablepanel-i"/>{{ $t('panel.store') }}</span>-->
+<!--          <enshrine v-if="activeName==='panels_star'"/>-->
+<!--        </el-tab-pane>-->
+<!--        <el-tab-pane-->
+<!--          name="panels_share"-->
+<!--          :lazy="true"-->
+<!--        >-->
+<!--          <span slot="label"><i class="el-icon-share tablepanel-i"/>{{ $t('panel.share') }}</span>-->
+<!--          <share-tree-->
+<!--            v-if="showShare"-->
+<!--            ref="share_tree"-->
+<!--            :msg-panel-ids="msgPanelIds"-->
+<!--          />-->
+<!--        </el-tab-pane>-->
       </el-tabs>
     </de-aside-container>
     <de-main-container>

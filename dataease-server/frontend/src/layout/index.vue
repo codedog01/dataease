@@ -4,10 +4,10 @@
     class="app-wrapper"
   >
     <licbar />
-     <topbar
-      v-if="!fullHeightFlag && finishLoad"
-      :show-tips="showTips"
-    />
+<!--     <topbar-->
+<!--      v-if="!fullHeightFlag && finishLoad"-->
+<!--      :show-tips="showTips"-->
+<!--    />-->
 
     <de-container :style="mainStyle">
       <de-aside-container
